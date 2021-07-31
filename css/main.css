@@ -16,7 +16,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(8, 112, 32, 0.69);
+    background-color: rgba(190, 204, 193, 0.69);
 }
 .modal-window {
     position: absolute;
@@ -31,11 +31,6 @@ body {
 .hidden {
     display: none;
 }
-
-[data-name], [data-tab] {
-    cursor: pointer;
-}
-
 
 [data-name], [data-tab] {
     cursor: pointer;
