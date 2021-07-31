@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,24 +9,17 @@
     <link rel="stylesheet" href="css/main.css">
     <title>JS-MODAL</title>
 </head>
+
 <body>
     <h1 class="mb-4">Modal</h1>
 
-    <button
-    data-modal-button="modal-1"
-    class="btn btn-outline-primary mb-1"
-    type="button"
-    >
-    Open modal-1
+    <button data-modal-button="modal-1" class="btn btn-outline-primary mb-1" type="button">
+        Open modal-1
     </button>
-<!-- 
-    <button
-    data-modal-button="modal-2"
-    class="btn btn-outline-primary mb-1"
-    type="button"
-    >
-    Open modal-2
-    </button> -->
+
+    <button data-modal-button="modal-2" class="btn btn-outline-primary mb-1" type="button">
+        Open modal-2
+    </button>
 
     <div id="modal-1" data-modal class="fade-block hidden">
         <div class="modal-window">
@@ -37,19 +31,15 @@
                     <p>
                         lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.
                     </p>
-                    <button
-                    data-modal-close
-                    type="button"
-                    class="btn btn-dark"
-                    >
-                    Close mod
+                    <button data-modal-close type="button" class="btn btn-dark">
+                        Close modal
                     </button>
                 </div>
             </div>
         </div>
 
     </div>
-    <!-- <div id="modal-2" class="fade-block">
+    <div id="modal-2" data-modal class="fade-block hidden">
         <div class="modal-window">
             <div class="card">
                 <div class="card-header">
@@ -59,18 +49,15 @@
                     <p>
                         lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.
                     </p>
-                    <button
-                    data-modal-close
-                    type="button"
-                    class="btn btn-dark"
-                    >
-                    Close mod
+                    <button data-modal-close type="button" class="btn btn-dark">
+                        Close modal
                     </button>
                 </div>
             </div>
         </div>
 
-    </div> -->
-<script src="./js/modal.js"></script>
+    </div>
+    <script src="./js/modal.js"></script>
 </body>
+
 </html>
