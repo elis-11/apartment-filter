@@ -51,17 +51,3 @@
 // to find nessesery elements (Open and Close)
 
 // close modal
-buttonClose.addEventListener("click", function () {
-  // console.log('Click on close button');
-  modal.classList.add("hidden");
-});
-modal.addEventListener("click", function () {
-  // console.log('Click on close button');
-  modal.classList.add("hidden");
-
-  modal.querySelector('.modal-window').addEventListener("click", function (e) {
-
-    console.log(e);
-    e.stopPropagation()
-  })
-});
