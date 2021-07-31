@@ -1,10 +1,8 @@
-// console.log('tabs!!!!');
 // founf all tab-headers for data-atributs
 const tabHeaders = document.querySelectorAll("[data-tab]");
-console.log(tabHeaders);
+// console.log(tabHeaders);
 // found all contentBoxes
-const contentBoxes=document.querySelectorAll('[data-tab-content]');
-
+const contentBoxes = document.querySelectorAll("[data-tab-content]");
 
 tabHeaders.forEach(function (item) {
   // console.log(item)
@@ -13,15 +11,14 @@ tabHeaders.forEach(function (item) {
     // console.log(this);
     // console.log(this.dataset.tab);
 
+    // -1- to hide all contentBoxes
+    contentBoxes.forEach(function (item) {
+      item.classList.add("hidden");
+    });
+
+    // -2- to select the contentBox and to show it
     const contentBox = document.querySelector("#" + this.dataset.tab);
     // console.log(contentBox);
-
-    // -1- to find the content box
-    contentBoxes.forEach(function (item){
-        item.classList.add('hidden')
-    })
-
-
-    // -2- to select the content boxand to show it
-  })
-})
+    contentBox.classList.remove("hidden");
+  });
+});
