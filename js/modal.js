@@ -47,18 +47,8 @@
 //   })
 // });
 
-//-----VERSION-2-------
+//-----VERSION-3-------
 // to find nessesery elements (Open and Close)
-const button = document.querySelector("[data-modal-button]");
-// console.log(button);
-const modal = document.querySelector("[data-modal]");
-// console.log('Click!!!');
-const buttonClose = document.querySelector("[data-modal-close]");
-
-// open modal
-button.addEventListener("click", function () {
-  modal.classList.remove("hidden");
-});
 
 // close modal
 buttonClose.addEventListener("click", function () {
