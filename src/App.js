@@ -5,24 +5,40 @@ export const App = () => {
 	const [ name, setName ] = useState('');
 	const [ nameIsValid, setNameIsValid ] = useState(false);
 
+	const [ pin, setPin ] = useState('');
+	const [ pinIsValid, setPinIsValid ] = useState(false);
+
 	const [ phone, setPhone ] = useState('');
 	const [ phoneIsValid, setPhoneIsValid ] = useState(false);
 
 	const [ payload, setPayload ] = useState({});
 	const [ formIsValid, setFormIsValid ] = useState(false);
 
-	useEffect(() => {
-		setFormIsValid(nameIsValid && phoneIsValid);
-	}, [nameIsValid, phoneIsValid])
+	useEffect(
+		() => {
+			setFormIsValid(nameIsValid && phoneIsValid);
+		},
+		[ nameIsValid, phoneIsValid ]
+	);
 
 	const handleName = (e) => {
 		let _name = e.target.value;
-		if (_name !== '' && _name.length <= 10) {
+		if (_name !== '' && _name.length > 4 && _name.length < 20) {
 			setNameIsValid(true);
 		} else {
 			setNameIsValid(false);
 		}
 		setName(_name);
+	};
+
+	const handlePin = (e) => {
+		let _pin = e.target.value;
+		if (_pin !== '' && _pin.length === 4) {
+			setPinIsValid(true);
+		} else {
+			setPinIsValid(false);
+		}
+		setPin(_pin)
 	};
 
 	const handlePhone = (e) => {
@@ -54,20 +70,35 @@ export const App = () => {
 			<form>
 				<fieldset>
 					<legend>Order Form</legend>
+
+					{/* NAME */}
 					<div className={'row ' + (nameIsValid ? 'valid' : 'invalid')}>
 						<label htmlFor="name">Name</label>
 						<input type="text" id="name" value={name} onChange={handleName} />
 					</div>
-					<div className={'note ' + (nameIsValid ? 'valid' : 'invalid')}>required, maximum 10 characters</div>
+					<div className={'note ' + (nameIsValid ? 'valid' : 'invalid')}>
+						required, minimum 5 and maximum 10 characters
+					</div>
 
+					{/* PIN */}
+					<div className={'row ' + (pinIsValid ? 'valid' : 'invalid')}>
+						<label htmlFor="pin">Pin</label>
+						<input type="text" id="pin" value={pin} onChange={handlePin} />
+					</div>
+					<div className={'note ' + (pinIsValid ? 'valid' : 'invalid')}>required, 4 characters</div>
+
+					{/* PHONE */}
 					<div className={'row ' + (phoneIsValid ? 'valid' : 'invalid')}>
 						<label htmlFor="phone">Phone</label>
 						<input type="text" id="phone" value={phone} onChange={handlePhone} />
 					</div>
 					<div className={'note ' + (phoneIsValid ? 'valid' : 'invalid')}>e.g. 555-333-2222</div>
 
+					{/* BUTTON */}
 					<div className="buttonRow">
-					<button disabled={!formIsValid} onClick={handleButton}>Register</button>
+						<button disabled={!formIsValid} onClick={handleButton}>
+							Register
+						</button>
 					</div>
 				</fieldset>
 			</form>
