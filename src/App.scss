@@ -41,7 +41,10 @@
 				font-size: 1rem;
 				margin: 0 0 20px 97px;
 			}
-			.buttonRow {
+			 
+			.invalid input {
+				color: red;
+			}			.buttonRow {
 				display: flex;
 				justify-content: right;
 				button {
