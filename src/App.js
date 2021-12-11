@@ -77,7 +77,7 @@ export const App = () => {
 						<input type="text" id="name" value={name} onChange={handleName} />
 					</div>
 					<div className={'note ' + (nameIsValid ? 'valid' : 'invalid')}>
-						required, minimum 5 and maximum 10 characters
+						required, 3 -10 characters
 					</div>
 
 					{/* PIN */}
