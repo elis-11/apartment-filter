@@ -1,8 +1,11 @@
 .App {
   text-align: center;
+  font-family: 'Roboto', sans-serif;
+  background-color: #282c34;
+  color: grey;
 
-  .header {
-    background-color: #282c34;
+
+  // .header {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -10,7 +13,7 @@
     justify-content: center;
     font-size: calc(10px + 2vmin);
     color: white;
-  }
+  // }
 
   .App-link {
     color: #61dafb;
