@@ -1,8 +1,19 @@
-import React from "react";
+import React, {useState} from "react";
 import { BrowserRouter, Switch, Route, Link} from "react-router-dom";
 import "./Auth.scss";
 
 const Auth = () => {
+
+const [form, setForm]= useState({
+  email: '',
+  password: '',
+})
+
+const changeHandler= (event)=>{
+  setForm({...form, [event.target.name]: event.target.value})
+  console.log(form);
+}
+
   return (
     <BrowserRouter>
       <Switch>
@@ -15,14 +26,20 @@ const Auth = () => {
                 <form className="form form-login">
                   <div className="row">
                     <div className="input-field col s12">
-                      <input type="text" name="email" className="validation" />
+                      <input 
+                      type="text" 
+                      name="email" 
+                      className="validate"
+                      onChange={changeHandler}
+                      />
                       <label htmlFor="email">Email</label>
                     </div>
                     <div className="input-field col s12">
                       <input
                         type="password"
                         name="password"
-                        className="validation"
+                        className="validate"
+                        onChange={changeHandler}
                       />
                       <label htmlFor="password">Password</label>
                     </div>
@@ -43,14 +60,19 @@ const Auth = () => {
                 <form className="form form-login">
                   <div className="row">
                     <div className="input-field col s12">
-                      <input type="text" name="email" className="validation" />
+                      <input type="text" 
+                      name="email" 
+                      className="validate"
+                      onChange={changeHandler}
+                      />
                       <label htmlFor="email">Email</label>
                     </div>
                     <div className="input-field col s12">
                       <input
                         type="password"
                         name="password"
-                        className="validation"
+                        className="validate"
+                      onChange={changeHandler}
                       />
                       <label htmlFor="password">Password</label>
                     </div>
@@ -74,3 +96,5 @@ const Auth = () => {
 };
 
 export default Auth;
+
+// 47:02
