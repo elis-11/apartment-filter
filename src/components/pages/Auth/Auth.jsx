@@ -60,7 +60,7 @@ const Auth = () => {
                       Register
                     </button>
                     <Link to="/login" className="btn-outline btn-reg">
-                      Don't you have an account?
+                      Do you have an account?
                     </Link>
                   </div>
                 </form>
