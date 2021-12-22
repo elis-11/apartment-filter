@@ -1,13 +1,13 @@
 import './App.scss';
 import Navbar from './components/Navbar/Navbar';
-import Auth from './components/pages/Auth/Auth';
+import AuthPage from './components/pages/AuthPage/AuthPage';
 
 
 function App() {
   return (
     <div className="App">
         <Navbar />
-        <Auth />
+        <AuthPage />
     </div>
   );
 }
