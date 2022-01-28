@@ -1,20 +1,19 @@
 .Nav {
   grid-area: nav;
-  background-color: rgb(91, 185, 91);
+  background-color: rgb(221, 221, 223);
+  color: rgb(201, 28, 28);
   padding: 1em;
   height: 100vh;
   justify-content: space-between;
   align-items: center;
 
-  display: grid; 
-  grid-auto-rows: 1fr; 
-  grid-template-columns: 1fr; 
-  grid-template-rows: 0.3fr 2fr 0.7fr; 
-  gap: 0px 0px; 
-  grid-template-areas: 
+  display: grid;
+  grid-auto-rows: 1fr;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.3fr 2fr 0.7fr;
+  gap: 0px 0px;
+  grid-template-areas:
     "logo"
     "links"
-    "icons"; 
-
-    
+    "icons";
 }
