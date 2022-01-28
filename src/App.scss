@@ -10,8 +10,9 @@
   // background-color: rgb(29, 26, 26);
   
   display: grid; 
-  grid-template-columns: 2fr 10fr; 
+  grid-template-columns: 10% 90%; 
   grid-template-rows: 1fr; 
+  gap: 0px 0px; 
   grid-template-areas: 
     "nav container"; 
 }

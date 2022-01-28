@@ -1,9 +1,11 @@
 import { NavLink } from "react-router-dom";
+import { Logo } from "./logo/Logo";
 import "../styles/Nav.scss";
 
 export const Nav = () => {
   return (
     <div className="Nav">
+      <Logo />
       <nav>
         <ul>
           <li>
