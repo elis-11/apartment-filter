@@ -1,4 +1,17 @@
 .Nav {
-    background-color: green;
-    height: 8vh;
+  grid-area: nav;
+  background-color: rgb(91, 185, 91);
+  padding: 1em;
+  height: 100vh;
+  justify-content: space-between;
+  align-items: center;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.2fr 2.2fr 0.6fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "logo"
+    "links"
+    "icons";
 }

@@ -1,4 +1,4 @@
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route, NavLink as Link } from "react-router-dom";
 // import Nav from "./components/Nav";
 import { Home } from "./pages/Home";
 import { About } from "./pages/About";
@@ -13,13 +13,19 @@ export const App = () => {
       <nav>
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/" activeClassName="active">
+              Home
+              </Link>
           </li>
           <li>
-            <Link to="projects">Projects</Link>
+            <Link to="projects" activeClassName="active">
+              Projects
+              </Link>
           </li>
           <li>
-            <Link to="about">About</Link>
+            <Link to="about" activeClassName="active">
+              About
+              </Link>
           </li>
         </ul>
       </nav>
