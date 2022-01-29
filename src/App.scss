@@ -1,18 +1,22 @@
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 .App {
   margin: 0 auto;
   width: 100vw;
   height: 100vh;
   // background-color: rgb(29, 26, 26);
-  
-  display: grid; 
-  grid-template-columns: 10% 90%; 
-  grid-template-rows: 1fr; 
-  gap: 0px 0px; 
-  grid-template-areas: 
-    "nav container"; 
+
+  display: grid;
+  grid-template-columns: 10% 90%;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-template-areas: "nav container";
+
+  nav a.active {
+    // background-color: rgb(214, 36, 36);
+    color: rgb(214, 36, 36);
+  }
 }
