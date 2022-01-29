@@ -4,8 +4,10 @@ import { Home } from "./pages/Home";
 import { About } from "./pages/About";
 import { Projects } from "./pages/Projects";
 import { NotFound } from "./pages/NotFound";
+import { Dashboard } from "./components/Dashboard";
+import { RouteAsObj } from "./components/RouteAsObj";
+
 import "./App.scss";
-import { Dashboard } from "./pages/Dashboard";
 
 export const App = () => {
   return (
@@ -33,6 +35,11 @@ export const App = () => {
               Dashboard
               </Link>
           </li>
+          <li>
+            <Link to="/object_route" activeClassName="active">
+              Route as Object
+              </Link>
+          </li>
         </ul>
       </nav>
       <div className="main">
@@ -41,6 +48,7 @@ export const App = () => {
           <Route path="/about" element={<About />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="dashboard/*" element={<Dashboard />} />
+          <Route path="object_route/*" element={<RouteAsObj />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
