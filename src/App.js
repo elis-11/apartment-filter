@@ -5,6 +5,7 @@ import { About } from "./pages/About";
 import { Projects } from "./pages/Projects";
 import { NotFound } from "./pages/NotFound";
 import "./App.scss";
+import { Dashboard } from "./pages/Dashboard";
 
 export const App = () => {
   return (
@@ -13,7 +14,7 @@ export const App = () => {
       <nav>
         <ul>
           <li>
-            <Link to="/" activeClassName="active">
+            <Link to="/" activeClassName="active" end>
               Home
               </Link>
           </li>
@@ -27,6 +28,11 @@ export const App = () => {
               About
               </Link>
           </li>
+          <li>
+            <Link to="dashboard" activeClassName="active">
+              Dashboard
+              </Link>
+          </li>
         </ul>
       </nav>
       <div className="main">
@@ -34,7 +40,8 @@ export const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/projects" element={<Projects />} />
-          <Route path="*" element={<NotFound />}></Route>
+          <Route path="dashboard/*" element={<Dashboard />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
     </div>
