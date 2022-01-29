@@ -17,6 +17,9 @@ export const Nav = () => {
           <li>
             <NavLink to="projects">Projects</NavLink>
           </li>
+          <li>
+            <NavLink to="dashboard">Dashboard</NavLink>
+          </li>
         </ul>
       </nav>
     </div>
