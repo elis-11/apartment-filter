@@ -1,5 +1,6 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
-import { Routes, Link, Route, useParams } from "react-router-dom";
+import { Routes, Link, Route, useParams, useNavigate } from "react-router-dom";
 
 export const Dashboard = () => {
   return (
@@ -53,8 +54,22 @@ export const Orders = () => {
 };
 export const OrderDetails = () => {
   const params = useParams();
+  const navigate = useNavigate();
 
-  return <h2>Details of order {params.orderId}</h2>;
+  const onBackClick = (e) => {
+    e.preventDefault();
+    // navigate(-1)
+    navigate("/dashboard/orders");
+  };
+
+  return (
+    <>
+      <h2>Details of order {params.orderId}</h2>
+      <a href="#" onClick={onBackClick}>
+        Back to Orders
+      </a>
+    </>
+  );
 };
 export const Quotes = () => {
   return <h2>Quotes</h2>;
