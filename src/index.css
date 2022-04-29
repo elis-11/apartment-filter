@@ -1,13 +1,57 @@
-@import "./reset.css";
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  margin: 0 auto;
+  max-width: 900px;
+}
+nav ul {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+nav a {
+  text-decoration: none;
+  display: inline-block;
+  padding: 1rem;
+}
+.main {
+  padding: 1rem;
+}
+
+nav a.active {
+  background-color: #eee;
+}
+.main {
+  padding: 1rem;
+}
+
+.main ul {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.main ul li {
+  margin-right: 1rem;
+}
+.dashboard {
+  padding: 1rem 0;
+}
+ul.orders {
+  flex-direction: column;
+  border: 1px solid;
+  padding: 0.5rem;
+}
+.orders li {
+  padding: 0.5rem 0;
+}
+ul.invoices {
+  flex-direction: column;
+  border: 1px solid;
+  padding: 0.5rem;
+}
+.invoices li {
+  padding: 0.5rem 0;
 }

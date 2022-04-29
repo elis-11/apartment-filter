@@ -2,7 +2,7 @@
 import React from "react";
 import { Routes, Link, Route, useParams, useNavigate } from "react-router-dom";
 
-export const Dashboard = () => {
+const Dashboard = () => {
   return (
     <div>
       <ul>
@@ -31,14 +31,12 @@ export const Dashboard = () => {
 export const Profile = () => {
   return <h2>Profile</h2>;
 };
-
 export const Orders = () => {
-  const orderIds = ["101", "102", "103"];
+  const orderIds = ["10001", "10002", "10003"];
   return (
     <>
       <h2>Orders</h2>
       <ul className="orders">
-        {/* Loop through the orders array and display link to order details */}
         {orderIds.map((orderId) => {
           return (
             <li key={orderId}>
@@ -52,13 +50,16 @@ export const Orders = () => {
     </>
   );
 };
+export const Quotes = () => {
+  return <h2>Quotes</h2>;
+};
 export const OrderDetails = () => {
   const params = useParams();
   const navigate = useNavigate();
 
   const onBackClick = (e) => {
     e.preventDefault();
-    // navigate(-1)
+    // navigate(-1);
     navigate("/dashboard/orders");
   };
 
@@ -71,6 +72,5 @@ export const OrderDetails = () => {
     </>
   );
 };
-export const Quotes = () => {
-  return <h2>Quotes</h2>;
-};
+
+export default Dashboard;

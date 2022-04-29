@@ -1,22 +1,21 @@
-import React from "react"
-import { useRoutes, Outlet } from "react-router"
-import { Link } from "react-router-dom"
+import React from "react";
+import { useRoutes, Outlet } from "react-router";
+import { Link } from "react-router-dom";
 
-export const RouteAsObj = () => {
+const RouteAsObj = () => {
   let element = useRoutes([
     { path: "/", element: <Route1 /> },
     { path: "route2", element: <Route2 /> },
     {
       path: "route3",
       element: <Route3 />,
-      // children can be used to configure nested routes
       children: [
         { path: "child1", element: <Child1 /> },
         { path: "child2", element: <Child2 /> },
       ],
     },
     { path: "*", element: <NotFound /> },
-  ])
+  ]);
 
   return (
     <div>
@@ -33,11 +32,11 @@ export const RouteAsObj = () => {
       </ul>
       {element}
     </div>
-  )
-}
+  );
+};
 
-const Route1 = () => <h1>Route1</h1>
-const Route2 = () => <h1>Route2</h1>
+const Route1 = () => <h1>Route1</h1>;
+const Route2 = () => <h1>Route2</h1>;
 const Route3 = () => {
   return (
     <div>
@@ -52,10 +51,10 @@ const Route3 = () => {
       </ul>
       <Outlet />
     </div>
-  )
-}
-const Child1 = () => <h2>Child1</h2>
-const Child2 = () => <h2>Child2</h2>
-const NotFound = () => <h1>NotFound</h1>
+  );
+};
+const Child1 = () => <h2>Child1</h2>;
+const Child2 = () => <h2>Child2</h2>;
+const NotFound = () => <h1>NotFound</h1>;
 
-// export default RouteAsObj
+export default RouteAsObj;
