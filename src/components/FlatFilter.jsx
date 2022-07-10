@@ -1,28 +1,28 @@
-import { useContext } from "react"
-import { FlatContext } from "../contexts/FlatContext"
+import { useContext } from "react";
+import { FlatContext } from "../context/FlatContext";
 
 export const FlatFilter = () => {
-  const { filter, setFilter } = useContext(FlatContext)
+  const { filter, setFilter } = useContext(FlatContext);
 
-  // update text search filters
   const onTextChange = (e) =>
-    setFilter({ ...filter, [e.target.name]: e.target.value })
-
-  // update checkbox filters
-  // (using a javascript SET => sets have the advantage to store arrays with unique (!) values only)
+  setFilter({ ...filter, [e.target.name]: e.target.value });
+  
   const onCheckboxChange = (e) => {
-    const filterKey = e.target.name // e.g. "equipment"
-    const itemSelected = e.target.value // e.g. "doubleBeds"
-    let selectionNew = [...filter[filterKey]] // copy OLD selection array
+    const filterKey = e.target.name;
+    const selectedItem = e.target.value;
+    console.log(e.target.name, e.target.value);
+    let selectionNew = [...filter[filterKey]];
 
-    // toggle item in array (add / remove)
-    e.target.checked
-      ? selectionNew.push(itemSelected)
-      : (selectionNew = selectionNew.filter((item) => item !== itemSelected))
+console.log(selectionNew);
 
-    // update filter state
-    setFilter({ ...filter, [filterKey]: selectionNew })
-  }
+e.target.checked
+? selectionNew.push(selectedItem)
+: (selectionNew = selectionNew.filter((item) => item !== selectedItem));
+
+console.log(selectionNew);
+setFilter({ ...filter, [filterKey]: selectionNew });
+};
+
 
   return (
     <form className="flat-filter">
@@ -30,7 +30,6 @@ export const FlatFilter = () => {
 
       {/* LOCATION */}
       <div className="location">
-        
         {/* COUNTRY */}
         <div className="country">
           <label>Country: </label>
@@ -69,9 +68,6 @@ export const FlatFilter = () => {
           <span>House</span>
         </div>
       </div>
-      {/* end of Category */}
-
-      {/* Ausstattung */}
       <div className="equipments">
         <h3>Equipment</h3>
 
@@ -132,5 +128,5 @@ export const FlatFilter = () => {
       </div>
       {/* END of Location*/}
     </form>
-  )
-}
+  );
+};

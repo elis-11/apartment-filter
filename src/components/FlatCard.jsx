@@ -1,16 +1,15 @@
-const FlatCard = ({ flat }) => {
+export const FlatCard = ({ flat }) => {
   return (
     <div className="flat-card">
-      {/* VENUE IMAGE */}
       <div className="image">
-        <img alt="appartment"
+        <img
+          alt="appartment"
           src={`//source.unsplash.com/100x100/?${
             flat.category === "Apartment" ? "apartment" : "house"
           }`}
         />
       </div>
 
-      {/* CONTENT */}
       <div className="card-body">
         <div>{flat.title}</div>
         <div>{flat.category}</div>
@@ -23,17 +22,14 @@ const FlatCard = ({ flat }) => {
           {flat.seaview && <span>Seaview</span>}
           {flat.wlan && <span>Free WLAN</span>}
         </div>
-      </div>
 
-      {/* ACTIONS */}
-      <div className="card-actions">
-        <div>{flat.pricePerNight} &euro; / per Night</div>
-        <div>
-          <button>Book</button>
+        <div className="card_actions">
+          <div>{flat.pricePerNight} &euro; / per Night</div>
+          <div>
+            <button>Book</button>
+          </div>
         </div>
       </div>
     </div>
-  )
-}
-
-export default FlatCard
+  );
+};

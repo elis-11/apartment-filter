@@ -1,4 +1,4 @@
-import FlatCard from "./FlatCard"
+import { FlatCard } from "./FlatCard";
 
 export const FlatList = ({ flats }) => {
   return (
@@ -7,5 +7,5 @@ export const FlatList = ({ flats }) => {
         <FlatCard key={flat._id} flat={flat} />
       ))}
     </div>
-  )
-}
+  );
+};
